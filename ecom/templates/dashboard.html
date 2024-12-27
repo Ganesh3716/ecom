@@ -1,0 +1,35 @@
+<a href="#"><button class="button-52">Go to home</button></a>
+<div class="container">
+  <div class="row">
+    {% for i in items %}
+    <div class="col-12 col-md-3"><br>
+      <div class="carding p-3">
+        <a href="#"><img src="{{url_for('static', filename=i[0] + '.jpg')}}" height="100" width="100" class="exploreimage w-100" /></a><br>
+        <label><b>Name:</b> {{i[1]}}</label><br>
+        <label><b>Available in Stock:</b> {{i[3]}}</label><br>
+        <form method="POST" action="{{url_for('pay', itemid=i[0], name=i[1], price=i[5])}}">
+          <label for="qty"><b>Quantity:</b></label>
+          <select class="form-select" name="qyt" aria-label="Select quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select><br>
+          <label><b>Category:</b> {{i[4]}}</label><br>
+          <label><b>Price:</b> {{i[5]}}</label><br>
+          <button type="submit">Pay</button>
+        </form>
+        <form method="POST" action="{{url_for('addcart', itemid=i[0], name=i[1], category=i[2], price=i[5], image=i[0], quantity=i[3])}}">
+          <button type="submit">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

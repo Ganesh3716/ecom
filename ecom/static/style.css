@@ -1,0 +1,15 @@
+h1{
+    color: rgb(0, 0, 0);
+    border-style: ridge;
+    background-color: yellow;
+    width: fit-content;
+    border-color: #4CAF50;
+}
+button{
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+input{
+    border-radius: 20%;
+    background-color: aqua;
+}
